@@ -1,0 +1,14 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+[[mods]]
+modId="imagination_example"
+version="0.1.0"
+displayName="Imagination Java Extension Example"
+description="An independently packaged custom Mind module and API."
+[[dependencies.imagination_example]]
+modId="jevmod"
+type="required"
+versionRange="[0.3.0,)"
+ordering="AFTER"
+side="BOTH"

@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="Andrey + AI agents"
+description='''
+A customizable neural sandbox: brains (JSON) read sensors, ask Jev-style typed questions
+(yes/no, choice, score) to an AI provider, and drive powers written as hot-reloadable
+JavaScript with Java-backed VFX (beams, rings, orbs, particles, sounds).
+'''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[${neo_version},)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"

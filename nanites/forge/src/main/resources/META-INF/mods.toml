@@ -1,0 +1,20 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+[[mods]]
+modId="nanites"
+version="0.2.0"
+displayName="Nanites"
+description='''Owner-programmed resource-budgeted nanite shield and particle structures.'''
+[[dependencies.nanites]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.28,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.nanites]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"

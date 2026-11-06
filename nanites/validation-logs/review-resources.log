@@ -1,0 +1,58 @@
+FILE D:\Downloads\nanobots mod\nanites\forge\src\main\resources\pack.mcmeta
+{"pack":{"pack_format":15,"description":"Nanites Forge resources"}}
+FILE D:\Downloads\nanobots mod\nanites\forge\src\main\resources\data\nanites\recipes\box.json
+{"type":"minecraft:crafting_shaped","pattern":["IRI","RGR","IRI"],"key":{"I":{"item":"minecraft:iron_ingot"},"R":{"item":"minecraft:redstone"},"G":{"item":"minecraft:gold_ingot"}},"result":{"item":"nanites:box","count":1}}
+FILE D:\Downloads\nanobots mod\nanites\forge\src\main\resources\data\nanites\recipes\reservoir.json
+{"type":"minecraft:crafting_shaped","pattern":["I I","RGR","III"],"key":{"I":{"item":"minecraft:iron_ingot"},"R":{"item":"minecraft:redstone"},"G":{"item":"minecraft:glass"}},"result":{"item":"nanites:reservoir","count":1}}
+FILE D:\Downloads\nanobots mod\nanites\forge\src\main\resources\META-INF\mods.toml
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+[[mods]]
+modId="nanites"
+version="0.2.0"
+displayName="Nanites"
+description='''Owner-programmed resource-budgeted nanite shield and particle structures.'''
+[[dependencies.nanites]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.28,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.nanites]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"
+FILE D:\Downloads\nanobots mod\nanites\fabric\src\main\resources\fabric.mod.json
+{
+  "schemaVersion": 1, "id": "nanites", "version": "0.2.0", "name": "Nanites",
+  "environment": "*", "entrypoints": {"main": ["dev.nanites.fabric.NanitesFabric"]},
+  "mixins": ["nanites.mixins.json"],
+  "depends": {"fabricloader": ">=0.16.14", "minecraft": "1.21.1", "java": ">=21", "fabric-api": "*"}
+}
+FILE D:\Downloads\nanobots mod\nanites\fabric\src\main\resources\nanites.mixins.json
+{"required":true,"package":"dev.nanites.fabric","compatibilityLevel":"JAVA_21","mixins":["DamageMixin"],"injectors":{"defaultRequire":1}}
+FILE D:\Downloads\nanobots mod\nanites\fabric\src\main\resources\pack.mcmeta
+{"pack":{"pack_format":34,"description":"Nanites Fabric resources"}}
+FILE D:\Downloads\nanobots mod\nanites\fabric\src\main\resources\data\nanites\recipe\box.json
+{"type":"minecraft:crafting_shaped","pattern":["IRI","RGR","IRI"],"key":{"I":{"item":"minecraft:iron_ingot"},"R":{"item":"minecraft:redstone"},"G":{"item":"minecraft:gold_ingot"}},"result":{"id":"nanites:box","count":1}}
+FILE D:\Downloads\nanobots mod\nanites\fabric\src\main\resources\data\nanites\recipe\reservoir.json
+{"type":"minecraft:crafting_shaped","pattern":["I I","RGR","III"],"key":{"I":{"item":"minecraft:iron_ingot"},"R":{"item":"minecraft:redstone"},"G":{"item":"minecraft:glass"}},"result":{"id":"nanites:reservoir","count":1}}
+FILE D:\Downloads\nanobots mod\nanites\game-resources\common\assets\nanites\lang\en_us.json
+{"item.nanites.box":"Nanite Box (500 billion)","item.nanites.reservoir":"Generic Nanite Reservoir"}
+FILE D:\Downloads\nanobots mod\nanites\game-resources\common\assets\nanites\lang\pt_br.json
+{"item.nanites.box":"Caixa de nanites (500 bilh«Êes)","item.nanites.reservoir":"Reservat«¸rio gen«∏rico de nanites"}
+FILE D:\Downloads\nanobots mod\nanites\game-resources\common\assets\nanites\models\item\box.json
+{"parent":"minecraft:item/generated","textures":{"layer0":"nanites:item/box"}}
+FILE D:\Downloads\nanobots mod\nanites\game-resources\common\assets\nanites\models\item\reservoir.json
+{"parent":"minecraft:item/generated","textures":{"layer0":"nanites:item/reservoir"}}
+allprojects { group = 'dev.nanites'; version = '0.2.0'; repositories { mavenCentral() } }
+subprojects { tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }; tasks.withType(AbstractArchiveTask).configureEach { preserveFileTimestamps = false; reproducibleFileOrder = true } }
+pluginManagement { repositories { maven { url = 'https://maven.minecraftforge.net' }; maven { url = 'https://maven.fabricmc.net' }; gradlePluginPortal() } }
+rootProject.name = 'nanites'
+include 'core', 'shared-game'
+def loader = providers.gradleProperty('loader').getOrElse('forge')
+if (!(loader in ['forge','fabric'])) throw new GradleException('Use -Ploader=forge or fabric')
+include loader

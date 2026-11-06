@@ -1,0 +1,1 @@
+{"id":"java_api_rules","engine":"rules","rules":[{"when":{},"actions":[{"service":"imagination_example:math","op":"double","args":{"value":21},"save_as":"answer"}]}]}

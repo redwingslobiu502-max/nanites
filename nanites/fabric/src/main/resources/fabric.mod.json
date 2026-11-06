@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1, "id": "nanites", "version": "0.2.0", "name": "Nanites",
+  "environment": "*", "entrypoints": {"main": ["dev.nanites.fabric.NanitesFabric"]},
+  "mixins": ["nanites.mixins.json"],
+  "depends": {"fabricloader": ">=0.16.14", "minecraft": "1.21.1", "java": ">=21", "fabric-api": "*"}
+}

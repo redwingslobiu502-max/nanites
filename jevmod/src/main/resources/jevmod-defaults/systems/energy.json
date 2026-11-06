@@ -1,0 +1,1 @@
+{"id":"energy","engine":"javascript","script":"energy.js","apis":["engineering"],"interval_ticks":1,"config":{"initial":100,"capacity":100,"drain_per_tick":1}}

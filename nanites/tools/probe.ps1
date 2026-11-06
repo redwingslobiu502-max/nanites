@@ -1,0 +1,4 @@
+$ErrorActionPreference='Stop'
+[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12
+$urls=@('https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml','https://maven.minecraftforge.net/net/minecraftforge/gradle/ForgeGradle/maven-metadata.xml','https://maven.fabricmc.net/net/fabricmc/fabric-loom/maven-metadata.xml','https://maven.fabricmc.net/net/fabricmc/fabric-loader/maven-metadata.xml','https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/maven-metadata.xml')
+foreach($u in $urls){$x=[xml](Invoke-WebRequest -UseBasicParsing $u).Content; Write-Output $u; $x.metadata.versioning.versions.version | Where-Object {if($u -like '*forge/maven*'){$_ -like '1.20.1-*'}elseif($u -like '*ForgeGradle*'){$_ -like '6.0.*'}elseif($u -like '*fabric-loom*'){$_ -match '^1.7.\d+$'}elseif($u -like '*fabric-api*'){$_ -like '*+1.21.1'}else{$_ -match '^0.16.\d+$'}} | Select-Object -Last 5}

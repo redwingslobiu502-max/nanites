@@ -1,0 +1,22 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :fabric
+Fabric Loom: 1.7.4
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file 'D:\Downloads\nanobots mod\nanites\fabric\build.gradle' line: 5
+
+* What went wrong:
+A problem occurred evaluating project ':fabric'.
+> Could not get unknown property 'sourceSets' for project ':shared-game' of type org.gradle.api.Project.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 1m 44s

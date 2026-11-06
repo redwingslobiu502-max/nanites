@@ -1,0 +1,11 @@
+{
+  "id": "shield", "name": "Energy shield", "kind": "toggle",
+  "description": "A coloured shell grants brief resistance, refreshed while active.",
+  "use_when": "The host requests protection, is low on health, or nearby hostile mobs threaten them.",
+  "max_active_ticks": 400,
+  "params": {
+    "color": {"type": "choice", "options": ["cyan", "blue", "purple", "yellow"], "default": "cyan"},
+    "radius": {"type": "range", "min": 1, "max": 2.5, "default": 1.6},
+    "strength": {"type": "range", "min": 0, "max": 2, "integer": true, "default": 0}
+  }
+}

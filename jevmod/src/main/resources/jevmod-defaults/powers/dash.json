@@ -1,0 +1,9 @@
+{
+  "id": "dash", "name": "Dash", "kind": "instant", "cooldown_ticks": 40,
+  "description": "Pushes the host along their gaze; does not teleport through walls.",
+  "use_when": "The host explicitly requests a dash.",
+  "params": {
+    "speed": {"type": "range", "min": 0.5, "max": 2, "default": 1},
+    "color": {"type": "choice", "options": ["cyan", "blue", "yellow"], "default": "cyan"}
+  }
+}

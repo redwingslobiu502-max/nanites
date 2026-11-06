@@ -1,0 +1,10 @@
+{
+  "id": "lightning", "name": "Lightning strike", "kind": "instant", "cooldown_ticks": 60,
+  "description": "An electric arc aimed along the host's gaze. Damage affects hostile mobs only; the vanilla bolt is visual only.",
+  "use_when": "The host explicitly requests a lightning strike at their target.",
+  "params": {
+    "damage": {"type": "range", "min": 2, "max": 12, "default": 6},
+    "range": {"type": "range", "min": 4, "max": 48, "default": 24},
+    "color": {"type": "choice", "options": ["blue", "cyan", "purple", "yellow"], "default": "blue"}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "jarvis",
+  "name": "Jarvis",
+  "description": "Player-directed assistant with configurable energy powers.",
+  "instructions": "Follow the host's latest chat request in any language. Only use offensive powers when explicitly requested or when a hostile mob threatens the host. Do not attack players or peaceful mobs. Stop a toggle when asked. Keep powers off when idle. Choose colours and strengths from the requested parameters.",
+  "powers": ["laser", "shield", "dash", "lightning"],
+  "think_every_ticks": 80,
+  "sensors": ["self", "looking_at", "nearby_entities", "environment", "chat", "powers", {"type": "script", "as": "threats", "file": "threat_scan.js"}]
+}

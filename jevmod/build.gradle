@@ -1,0 +1,150 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+    id 'idea'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+// Mojang ships Java 21 to end users in 1.21, so mods target Java 21.
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    mavenCentral()
+}
+
+neoForge {
+    version = project.neo_version
+
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
+    }
+
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        // Dev helper: runs `/jev demo` after the player joins a disposable test world.
+        demo {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'jevmod.devAutorun', '/jev demo'
+        }
+
+        workbenchCheck {
+            client()
+            systemProperty 'jevmod.devWorkbenchCheck', 'true'
+            jvmArgument '-Xmx1536m'
+        }
+        imaginationCheck {
+            client()
+            systemProperty 'jevmod.devImaginationCheck', 'true'
+            jvmArgument '-Xmx1536m'
+        }
+        qolCheck {
+            client()
+            systemProperty 'jevmod.devQolCheck', 'true'
+            jvmArgument '-Xmx1536m'
+        }
+
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        // Runs every @GameTest in the jevmod namespace headless, then exits (non-zero on failure).
+        gameTestServer {
+            type = "gameTestServer"
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            jvmArgument '-Xmx1536m'
+        }
+
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.INFO
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+dependencies {
+    // Rhino (pure-Java JavaScript engine) runs the hot-reloadable power scripts.
+    jarJar(implementation("org.mozilla:rhino:${rhino_version}"))
+    // NeoForge 1.21 isolates game libraries; dev runs also need the explicit library path.
+    additionalRuntimeClasspath "org.mozilla:rhino:${rhino_version}"
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testImplementation 'com.google.code.gson:gson:2.10.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// A real separately packaged Java addon demonstrates the public extension contract.
+sourceSets {
+    extensionExample {
+        java.srcDir 'extension-example/src/main/java'
+        resources.srcDir 'extension-example/src/main/resources'
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+neoForge.mods {
+    imagination_example { sourceSet(sourceSets.extensionExample) }
+}
+tasks.register('extensionExampleJar', Jar) {
+    from sourceSets.extensionExample.output
+    archiveFileName = 'imagination-example-0.1.0.jar'
+}
+
+tasks.named('test', Test) {
+    useJUnitPlatform()
+    // Live provider tests read OPENROUTER_API_KEY / TYPESAFE_API_KEY from the environment and skip without them.
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        showStandardStreams = true
+        exceptionFormat = 'full'
+    }
+}
+
+var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
+    var replaceProperties = [
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            neo_version            : neo_version,
+            loader_version_range   : loader_version_range,
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_version            : mod_version,
+    ]
+    inputs.properties replaceProperties
+    expand replaceProperties
+    from "src/main/templates"
+    into "build/generated/sources/modMetadata"
+}
+sourceSets.main.resources.srcDir generateModMetadata
+neoForge.ideSyncTask generateModMetadata
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
+}

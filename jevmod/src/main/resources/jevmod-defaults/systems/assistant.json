@@ -1,0 +1,1 @@
+{"id":"assistant","engine":"javascript","script":"assistant.js","config":{"minimum_confidence":0.5}}

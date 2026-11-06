@@ -1,0 +1,8 @@
+plugins { id 'java'; id 'net.minecraftforge.gradle' version '6.0.54' }
+java { toolchain.languageVersion = JavaLanguageVersion.of(17) }
+minecraft { mappings channel: 'official', version: '1.20.1'; runs { server { workingDirectory project.file('run'); mods { nanites { source sourceSets.main } } } } }
+dependencies { minecraft 'net.minecraftforge:forge:1.20.1-47.4.28'; implementation project(':shared-game'); implementation project(':core') }
+evaluationDependsOn(':core')
+evaluationDependsOn(':shared-game')
+sourceSets.main.resources.srcDir '../game-resources/common'
+jar { archiveBaseName = 'nanites-forge-1.20.1'; from project(':core').sourceSets.main.output; from project(':shared-game').sourceSets.main.output; finalizedBy 'reobfJar' }

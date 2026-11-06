@@ -1,0 +1,15 @@
+GUIDE=D:\Downloads\nanobots mod\GUIA_SETUP_E_BUILD.md|bytes=27156|UTC=2026-11-06T21:12:49.6472112Z
+20261106-180720-forge.log: RESULT: 33 tests passed; randomized transfers=10000; no network or game execution
+20261106-180720-forge.log: EXPANSION_TESTS=57 PASS; FAKE_TRANSPORT_ONLY; NO_LLM_CONNECTION
+20261106-180720-forge.log: GameTests: 50 checks passed. D:\Downloads\nanobots mod\nanites\build\review-temp\nanites-game-tests-5973638277791476044
+20261106-180720-forge.log: BUILD SUCCESSFUL in 1m 39s
+20261106-180720-forge.log: 18 actionable tasks: 15 executed, 3 up-to-date
+20261106-180720-fabric.log: RESULT: 33 tests passed; randomized transfers=10000; no network or game execution
+20261106-180720-fabric.log: EXPANSION_TESTS=57 PASS; FAKE_TRANSPORT_ONLY; NO_LLM_CONNECTION
+20261106-180720-fabric.log: GameTests: 50 checks passed. D:\Downloads\nanobots mod\nanites\build\review-temp\nanites-game-tests-11783017503079990654
+20261106-180720-fabric.log: BUILD SUCCESSFUL in 1m 59s
+20261106-180720-fabric.log: 16 actionable tasks: 14 executed, 2 up-to-date
+PUBLISHED_MATCH=dist/nanites-forge-1.20.1-0.2.0.jar
+PUBLISHED_MATCH=dist/nanites-fabric-1.21.1-0.2.0.jar
+REVIEW_BUILDS_STILL_RUNNING=0
+FINAL_REVIEW_VERIFIED

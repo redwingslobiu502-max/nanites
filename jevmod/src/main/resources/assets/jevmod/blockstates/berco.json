@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "jevmod:block/berco_lower"
+    },
+    "half=upper": {
+      "model": "jevmod:block/berco_upper"
+    }
+  }
+}

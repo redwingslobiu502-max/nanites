@@ -1,0 +1,1 @@
+{"id":"wireless_switch","engine":"javascript","script":"wireless_switch.js","interval_ticks":20,"config":{"channel":"home/switch","range":32,"output_side":"north"}}

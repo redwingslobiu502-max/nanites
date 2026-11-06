@@ -1,0 +1,13 @@
+forge BUILD PASSED; log=build/logs/20261106-172601-forge.log
+fabric BUILD PASSED; log=build/logs/20261106-172601-fabric.log
+Resolve-Path : N∆o Ç poss°vel localizar o caminho 'D:\Downloads\nanobots 
+mod\nanites\fabric\build\libs\nanites-fabric-1.21.1-0.2.0.jar' porque ele n∆o 
+existe.
+No D:\Downloads\nanobots mod\nanites\tools\audit.ps1:10 caractere:41
++  $z=[IO.Compression.ZipFile]::OpenRead((Resolve-Path $file));try{
++                                         ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (D:\Downloads\na....21.1-0.2.0.j 
+   ar:String) [Resolve-Path], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.Resol 
+   vePathCommand
+ 

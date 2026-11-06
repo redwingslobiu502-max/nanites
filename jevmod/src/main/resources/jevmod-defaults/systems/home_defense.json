@@ -1,0 +1,1 @@
+{"id":"home_defense","engine":"javascript","script":"home_defense.js","interval_ticks":20,"config":{"ammo_port":"ammo","ammunition":"minecraft:iron_nugget","radius":16,"speed":2,"damage":4,"hostiles_only":true,"require_redstone":false}}

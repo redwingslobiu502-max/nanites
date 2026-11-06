@@ -1,0 +1,12 @@
+{
+  "id": "body_factory",
+  "enabled": false,
+  "engine": "javascript",
+  "script": "body_factory.js",
+  "interval_ticks": 20,
+  "config": {
+    "port": "berco",
+    "adapt_to_last_damage": true,
+    "spec": {"kind":"player","model":"classic","duration_ticks":200,"resistances":[],"metadata":{"team":"factory"}}
+  }
+}

@@ -1,0 +1,9 @@
+// Usage: dev.cmd runGameTestServer --offline --no-configuration-cache -I gradle/audit-gametest.init.gradle
+// Never reuse run/ or an existing world/config: every invocation gets a fresh lab.
+gradle.projectsEvaluated {
+    def project = gradle.rootProject
+    def lab = project.layout.buildDirectory.dir("audit-gametest-${System.currentTimeMillis()}").get().asFile
+    if (lab.exists()) throw new GradleException("Audit lab must not already exist: ${lab}")
+    project.neoForge.runs.getByName('gameTestServer').gameDirectory.set(lab)
+    println "Isolated offline GameTest directory: ${lab}"
+}

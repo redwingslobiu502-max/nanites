@@ -1,0 +1,6 @@
+plugins { id 'java-library' }
+java { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
+dependencies { compileOnly 'com.google.code.gson:gson:2.10.1'; testImplementation 'com.google.code.gson:gson:2.10.1' }
+tasks.register('coreTests', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'dev.nanites.core.CoreTests' }
+tasks.register('expansionTests', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'dev.nanites.core.ExpansionTests' }
+check.dependsOn coreTests, expansionTests

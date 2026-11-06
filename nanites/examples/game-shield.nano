@@ -1,0 +1,17 @@
+# Minecraft adapter: damage is hundredths of HP; group is always owner.
+program shield version v1;
+state hits = 0;
+on fall group owner {
+  if (event.damage > 0) {
+    add hits = 1;
+    emit protect self = 20;
+    emit shape.ring self = 2;
+  }
+}
+on impact group owner {
+  if (event.damage > 0) {
+    add hits = 1;
+    emit protect self = 4;
+    emit shape.ring self = 1;
+  }
+}

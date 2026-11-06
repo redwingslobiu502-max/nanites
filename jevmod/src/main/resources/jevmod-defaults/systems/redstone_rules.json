@@ -1,0 +1,1 @@
+{"id":"redstone_rules","engine":"rules","interval_ticks":1,"rules":[{"when":{"redstone_min":1},"actions":[{"op":"redstone.output","args":{"side":"north","power":15}}]},{"when":{"redstone_max":0},"actions":[{"op":"redstone.output","args":{"side":"north","power":0}}]}]}

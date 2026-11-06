@@ -1,0 +1,70 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :core:compileJava
+> Task :core:processResources NO-SOURCE
+> Task :core:classes
+> Task :core:jar
+> Task :shared-game:compileJava
+> Task :shared-game:processResources NO-SOURCE
+> Task :shared-game:classes
+> Task :shared-game:compileTestJava
+> Task :shared-game:processTestResources NO-SOURCE
+> Task :shared-game:testClasses
+
+> Task :shared-game:gameTests
+GameTests: 16 checks passed. C:\Users\Andrey\AppData\Local\Temp\nanites-game-tests-12979225152943991456
+
+> Task :shared-game:jar
+> Task :shared-game:test
+> Task :shared-game:check
+> Task :forge:compileJava
+[17:22:11] [main/INFO]: Writing debug log file accesstransform.log
+[17:22:11] [main/INFO]: Access Transformer processor running version 8.2.14
+[17:22:11] [main/INFO]: Command line arguments [--inJar, C:\Users\Andrey\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.20.1-47.4.28\forge-1.20.1-47.4.28-injected.jar, --outJar, C:\Users\Andrey\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.20.1-47.4.28_mapped_official_1.20.1\forge-1.20.1-47.4.28_mapped_official_1.20.1.jar, --logFile, accesstransform.log, --atFile, D:\Downloads\nanobots mod\nanites\forge\build\_atJar_4\parent_at.cfg]
+[17:22:11] [main/INFO]: Reading from C:\Users\Andrey\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.20.1-47.4.28\forge-1.20.1-47.4.28-injected.jar
+[17:22:11] [main/INFO]: Writing to C:\Users\Andrey\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.20.1-47.4.28_mapped_official_1.20.1\forge-1.20.1-47.4.28_mapped_official_1.20.1.jar
+[17:22:11] [main/INFO]: Transformer file D:\Downloads\nanobots mod\nanites\forge\build\_atJar_4\parent_at.cfg
+[17:22:11] [main/WARN]: Found existing output jar C:\Users\Andrey\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.20.1-47.4.28_mapped_official_1.20.1\forge-1.20.1-47.4.28_mapped_official_1.20.1.jar, overwriting
+[17:22:23] [main/INFO]: JAR transformation complete C:\Users\Andrey\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.20.1-47.4.28_mapped_official_1.20.1\forge-1.20.1-47.4.28_mapped_official_1.20.1.jar
+D:\Downloads\nanobots mod\nanites\forge\src\main\java\dev\nanites\forge\NanitesForge.java:3: error: package dev.nanites.game does not exist
+import dev.nanites.game.GameService;
+                       ^
+D:\Downloads\nanobots mod\nanites\forge\src\main\java\dev\nanites\forge\NanitesForge.java:36: error: cannot find symbol
+    private GameService service;
+            ^
+  symbol:   class GameService
+  location: class NanitesForge
+D:\Downloads\nanobots mod\nanites\forge\src\main\java\dev\nanites\forge\NanitesForge.java:40: warning: [removal] get() in FMLJavaModLoadingContext has been deprecated and marked for removal
+    public NanitesForge(){ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());MinecraftForge.EVENT_BUS.register(this);}
+                                                                 ^
+D:\Downloads\nanobots mod\nanites\forge\src\main\java\dev\nanites\forge\NanitesForge.java:42: error: cannot find symbol
+    @SubscribeEvent public void start(ServerStartedEvent e){server=e.getServer();active=this;try{service=new GameService(server.getWorldPath(LevelResource.ROOT),FMLPaths.CONFIGDIR.get(),new GameService.Host(){
+                                                                                                             ^
+  symbol:   class GameService
+  location: class NanitesForge
+D:\Downloads\nanobots mod\nanites\forge\src\main\java\dev\nanites\forge\NanitesForge.java:42: error: package GameService does not exist
+    @SubscribeEvent public void start(ServerStartedEvent e){server=e.getServer();active=this;try{service=new GameService(server.getWorldPath(LevelResource.ROOT),FMLPaths.CONFIGDIR.get(),new GameService.Host(){
+                                                                                                                                                                                                         ^
+4 errors
+1 warning
+
+> Task :forge:compileJava FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':forge:compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --info option to get more log output.
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 1m 56s
+8 actionable tasks: 8 executed

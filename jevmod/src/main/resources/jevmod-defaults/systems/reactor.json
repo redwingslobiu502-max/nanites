@@ -1,0 +1,1 @@
+{"id":"reactor","engine":"javascript","script":"reactor.js","apis":["engineering"],"interval_ticks":20,"config":{"fuel_port":"reactor","fuel":"minecraft:coal","energy_per_fuel":40,"capacity":100,"refuel_below":60,"require_redstone":false}}

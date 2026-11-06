@@ -1,0 +1,12 @@
+{
+  "id": "laser", "name": "Energy laser", "kind": "toggle",
+  "description": "A coloured beam follows the host's gaze and damages hostile mobs only.",
+  "use_when": "The host asks for a laser or to attack a hostile mob they are aiming at.",
+  "max_active_ticks": 200,
+  "params": {
+    "color": {"type": "choice", "options": ["red", "blue", "cyan", "purple", "yellow"], "default": "red"},
+    "range": {"type": "range", "min": 4, "max": 48, "default": 24},
+    "damage": {"type": "range", "min": 1, "max": 8, "default": 3},
+    "width": {"type": "range", "min": 0.05, "max": 0.4, "default": 0.15}
+  }
+}

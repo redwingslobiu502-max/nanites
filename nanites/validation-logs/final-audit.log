@@ -1,0 +1,6 @@
+Forge descriptor, recipe, bytecode61 and SRG references verified
+forge/build/libs/nanites-forge-1.20.1-0.2.0.jar entries=123 bytes=187624 SHA256=938F2B3F67FA72128B7E5019A239A989F61724B63634074B83E4C138BD8B70AC
+Fabric descriptor, singular recipe path, bytecode65, intermediary Player mixin and actuallyHurt refmap verified
+fabric/build/libs/nanites-fabric-1.21.1-0.2.0.jar entries=126 bytes=190846 SHA256=F1A76F3289FBA8D783E7E8EF3A8D6F1F0850E4BA546054316A46B14463F9B87D
+Build logs: validation-logs/20261106-172909-forge.log ; validation-logs/20261106-172909-fabric.log
+No Minecraft runtime/game launched. No LLM server connected. Source decompiler transport compiled; actual configured Vineflower execution not tested in game.

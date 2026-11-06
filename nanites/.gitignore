@@ -1,0 +1,10 @@
+build/*
+!build/logs/
+.gradle/
+forge/build/
+fabric/build/
+shared-game/build/
+core/build/
+forge/run/
+fabric/run/
+*.class
