@@ -8,11 +8,11 @@ import java.util.*;
 public final class IntegrationContracts {
     private IntegrationContracts() {}
     public static final URI LOCAL_AI = URI.create("http://127.0.0.1:8081/v1");
-    public static URI validateAiEndpoint(URI endpoint) {
-        if (endpoint == null || !LOCAL_AI.toString().equals(endpoint.toString()) || endpoint.getRawUserInfo() != null || endpoint.getRawQuery() != null
-                || endpoint.getRawFragment() != null) throw new IllegalArgumentException("Only the exact local HTTPS endpoint is allowed");
-        return endpoint;
-    }
+    public static URI validateAiEndpoint(URI uri) {
+    if (uri == null || !LOCAL_AI.toString().equals(uri.toString()))
+        throw new IllegalArgumentException("Only exact local AI endpoint permitted: " + LOCAL_AI);
+    return uri;
+}
     public record CacheKey(String jarSha256, String loader, String minecraftVersion, String loaderVersion,
                            String decompilerVersion, String schemaVersion) {
         public CacheKey {
