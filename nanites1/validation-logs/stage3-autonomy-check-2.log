@@ -1,0 +1,31 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :core:compileJava UP-TO-DATE
+> Task :core:processResources NO-SOURCE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar UP-TO-DATE
+> Task :shared-game:compileJava
+> Task :shared-game:processResources NO-SOURCE
+> Task :shared-game:classes
+
+> Task :shared-game:compileTestJava FAILED
+D:\Downloads\nanobots\nanites\shared-game\src\test\java\dev\nanites\game\AutonomyTests.java:52: error: method move in class CapabilityTransfer cannot be applied to given types;
+            var r=CapabilityTransfer.move(from[i],to[i],a.get("amount").getAsInt(),a.get("preview").getAsBoolean());moves+=r.moved();return json("{\"moved\":"+r.moved()+",\"extracted\":"+r.extracted()+",\"held\":"+r.held()+"}");
+                                    ^
+  required: dev.nanites.game.CapabilityTransfer.Port,dev.nanites.game.CapabilityTransfer.Port,int,boolean,Escrow
+  found:    dev.nanites.game.AutonomyTests.Port,dev.nanites.game.AutonomyTests.Port,int,boolean
+  reason: actual and formal argument lists differ in length
+1 error
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':shared-game:compileTestJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --info option to get more log output.
+> Run with --scan to get full insights.
+
+BUILD FAILED in 24s
+4 actionable tasks: 2 executed, 2 up-to-date

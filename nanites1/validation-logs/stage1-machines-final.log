@@ -1,0 +1,168 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :core:compileJava
+> Task :core:processResources NO-SOURCE
+> Task :core:classes
+> Task :core:compileTestJava
+> Task :core:processTestResources NO-SOURCE
+> Task :core:testClasses
+
+> Task :core:coreTests
+PASS long box constant and checked multiplication
+PASS initialization rejects negatives capacity and duplicates
+PASS aggregate total overflow rejected
+PASS transfer exactly one box preserves total
+PASS batch rollback on late insufficiency
+PASS capacity failure does not mutate source
+PASS negative unknown and self transfers checked
+PASS near long max valid conservation
+PASS deterministic randomized conservation 10000 transactions
+PASS immutable snapshots and preview
+PASS group and event filtering
+PASS hot swap only at tick and preserves compatible state
+PASS invalid candidate rejected before scheduling
+PASS pending replacement cannot be silently overwritten
+PASS failed candidate rolls back program state and all transfers
+PASS state overflow rolls back valid pending transfer
+PASS negative state rejected atomically
+PASS action budget rejects entire tick
+PASS event budget and unknown events reject whole tick
+PASS incompatible schemas need explicit migration
+PASS migration uses state at tick not stage time
+PASS migration losses collisions and wrong versions rejected
+PASS explicit drops and target defaults
+PASS failed migrated program retains previous schema and state
+PASS insulating nonconductive arbitrary host
+PASS conflicting and unknown properties rejected
+PASS declared unknown adapter and missing capability never verified
+PASS component relocation conserves fuel state and requirements
+PASS component relocation cannot bypass host requirements
+PASS exact local AI HTTPS URL only, no request sent
+PASS cache keys invalidate across all version dimensions
+PASS incremental slice rejects unsafe paths and unbounded reads
+PASS multi turn contract bounds history turns and tools
+RESULT: 33 tests passed; randomized transfers=10000; no network or game execution
+
+> Task :core:expansionTests
+PASS expansion runtime fork preserves queue and isolates owner state
+PASS expansion runtime fork rejects pending activation
+PASS expansion funded copy conserves intake and spend without changing original
+PASS expansion parser precedence functions conditions and checked actions
+PASS expansion state expressions see preceding statements
+PASS expansion short circuit skips missing field and division by zero
+PASS expansion malformed source 6
+PASS expansion malformed source 7
+PASS expansion malformed source 8
+PASS expansion malformed source 9
+PASS expansion malformed source 10
+PASS expansion malformed source 11
+PASS expansion malformed source 12
+PASS expansion malformed source 13
+PASS expansion malformed source 14
+PASS expansion line diagnostics
+PASS expansion deep parentheses and left associated AST bounded
+PASS expansion source quota
+PASS expansion bounded repeat success
+PASS expansion loop count failure atomic
+PASS expansion recursive function failure diagnostic and rollback
+PASS expansion global evaluation budget bounds empty-output loops
+PASS expansion action budget atomic
+PASS expansion arithmetic overflow and negative transfer rollback
+PASS expansion unknown world capability denied at compile boundary
+PASS expansion world range denied atomically
+PASS expansion world outbox cannot silently overwrite
+PASS expansion preview leaves live state and ledger unchanged
+PASS expansion owner and stale revision enforced
+PASS expansion hot swap activates only at tick and keeps defaults
+PASS expansion hot swap failed tick keeps last script state and events
+PASS expansion explicit migration rename
+PASS expansion snapshot restart preserves queued events and conserved ledger
+PASS expansion snapshot validates version negatives total schema ownership
+PASS expansion strict JSON duplicate depth decimals trailing denied
+PASS expansion snapshot traversal and old file preserved on invalid write
+PASS expansion cache roundtrip slice literal search and trust boundary
+PASS expansion cache key changes all axes
+PASS expansion cache traversal absolute windows and oversized slices denied
+PASS expansion cache corrupt payload denied and invalidate isolated
+PASS expansion controlled paths deny symbolic link when OS permits creation
+PASS expansion tools allowlist read search catalog list state validate and proposal only
+PASS expansion tool injection shell URL and traversal never gain authority
+PASS expansion tool call and output quotas
+PASS expansion client exact URL configurable model and bounded payload
+PASS expansion client unavailable errors redirects malformed quota
+PASS expansion client timeout cancellation concurrent quota no tick blocking
+PASS expansion client invalid endpoint and missing model denied
+PASS expansion agent multi-turn results incremental and source injection is data
+PASS expansion agent turn quota and malformed call failures
+PASS expansion agent cancellation propagates
+PASS expansion optional decompiler config requires explicit regular tool
+PASS expansion explicit script rollback never rewinds ledger
+PASS expansion atomic store rejects stale snapshot and preserves current
+PASS expansion active script tool reads bounded slice without filesystem
+PASS expansion agent pre-request quota rejects without transport
+PASS expansion client response byte quota rejects fake oversized body
+EXPANSION_TESTS=57 PASS; FAKE_TRANSPORT_ONLY; NO_LLM_CONNECTION
+
+> Task :core:jar
+> Task :core:test
+> Task :core:check
+> Task :shared-game:compileJava
+> Task :shared-game:processResources NO-SOURCE
+> Task :shared-game:classes
+> Task :shared-game:compileTestJava
+> Task :shared-game:processTestResources NO-SOURCE
+> Task :shared-game:testClasses
+
+> Task :shared-game:constructionTests
+ConstructionTests: 252 checks passed (fake world/AI; Minecraft NOT launched).
+
+> Task :shared-game:gameTests
+Nanites VFX failed after accounting commit: VFX failure
+GameTests: 51 checks passed. C:\Users\Andrey\AppData\Local\Temp\nanites-game-tests-10035950029450828894
+
+> Task :shared-game:machineTests
+MachineTests: 84 checks passed (fake ports/AI, Minecraft NOT launched)
+
+> Task :shared-game:runtimeTests
+RuntimeTests: 91 deterministic checks passed (FAKE backend/transport; no live Forge or AI).
+
+> Task :shared-game:jar
+> Task :shared-game:test
+> Task :shared-game:check
+
+> Task :forge:compileJava
+D:\Downloads\nanobots\nanites\forge\src\main\java\dev\nanites\forge\NanitesForge.java:49: warning: [removal] get() in FMLJavaModLoadingContext has been deprecated and marked for removal
+    public NanitesForge(){ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());MinecraftForge.EVENT_BUS.register(this);}
+                                                                 ^
+1 warning
+
+> Task :forge:processResources UP-TO-DATE
+> Task :forge:classes
+> Task :forge:jar
+> Task :forge:downloadMcpConfig
+> Task :forge:extractSrg UP-TO-DATE
+> Task :forge:createMcpToSrg UP-TO-DATE
+> Task :forge:reobfJar
+> Task :forge:jarJar SKIPPED
+> Task :forge:reobfJarJar SKIPPED
+> Task :forge:assemble
+> Task :forge:compileTestJava UP-TO-DATE
+> Task :forge:processTestResources NO-SOURCE
+> Task :forge:testClasses UP-TO-DATE
+
+> Task :forge:forgeAttributeTests
+2026-11-07 15:12:29,307 main WARN Advanced terminal features are not available in this environment
+ForgeAttributeTests: 15 deterministic checks passed; real attribute objects only, no live game.
+
+> Task :forge:test
+> Task :forge:check
+> Task :forge:build
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 38s
+24 actionable tasks: 20 executed, 4 up-to-date

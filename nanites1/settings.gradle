@@ -1,0 +1,6 @@
+pluginManagement { repositories { maven { url = 'https://maven.minecraftforge.net' }; maven { url = 'https://maven.fabricmc.net' }; gradlePluginPortal() } }
+rootProject.name = 'nanites'
+include 'core', 'shared-game'
+def loader = providers.gradleProperty('loader').getOrElse('forge')
+if (!(loader in ['forge','fabric'])) throw new GradleException('Use -Ploader=forge or fabric')
+include loader

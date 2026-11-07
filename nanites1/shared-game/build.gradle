@@ -1,0 +1,11 @@
+plugins { id 'java-library' }
+java { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
+dependencies { api project(':core'); compileOnly 'com.google.code.gson:gson:2.10.1'; testImplementation 'com.google.code.gson:gson:2.10.1' }
+tasks.register('gameTests', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'dev.nanites.game.GameTests' }
+tasks.register('runtimeTests', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'dev.nanites.game.RuntimeTests' }
+tasks.register('constructionTests', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'dev.nanites.game.ConstructionTests' }
+tasks.register('machineTests', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'dev.nanites.game.MachineTests' }
+tasks.register('assimilationTests', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'dev.nanites.game.AssimilationTests' }
+tasks.register('autonomyTests', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'dev.nanites.game.AutonomyTests' }
+tasks.register('livingArmorTests', JavaExec) { dependsOn testClasses; classpath = sourceSets.test.runtimeClasspath; mainClass = 'dev.nanites.game.LivingArmorTests' }
+check.dependsOn gameTests, runtimeTests, constructionTests, machineTests, assimilationTests, autonomyTests, livingArmorTests

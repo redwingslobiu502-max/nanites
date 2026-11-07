@@ -1,0 +1,12 @@
+# A budgeted particle column, NOT solid blocks or custom armor.
+program structure version v1;
+state hits = 0;
+on tick group owner {
+  if (event.age % 40 == 0) {
+    emit shape.column self = 3;
+  }
+}
+on fall group owner {
+  add hits = 1;
+  emit protect self = 10;
+}

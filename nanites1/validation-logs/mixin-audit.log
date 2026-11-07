@@ -1,0 +1,89 @@
+dev/nanites/fabric/DamageMixin.class
+fabric-refmap.json
+nanites.mixins.json
+fabric-refmap.json
+{
+  "mappings": {
+    "dev/nanites/fabric/DamageMixin": {
+      "actuallyHurt": "Lnet/minecraft/class_1657;method_6074(Lnet/minecraft/class_1282;F)V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "dev/nanites/fabric/DamageMixin": {
+        "actuallyHurt": "Lnet/minecraft/class_1657;method_6074(Lnet/minecraft/class_1282;F)V"
+      }
+    }
+  }
+}
+nanites.mixins.json
+{
+  "required": true,
+  "package": "dev.nanites.fabric",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "DamageMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "fabric-refmap.json"
+}
+
+>    #8 = Utf8               Lnet/minecraft/class_1657;
+     #9 = Utf8               <init>
+    #10 = Utf8               ()V
+>   #20 = Utf8               
+Lorg/spongepowered/asm/mixin/injection/ModifyVariable;
+    #21 = Utf8               method
+>   #22 = Utf8               actuallyHurt
+    #23 = Utf8               at
+    #24 = Utf8               Lorg/spongepowered/asm/mixin/injection/At;
+>   #38 = Utf8               method_5679
+    #39 = Utf8               (Lnet/minecraft/class_1282;)Z
+>   #40 = NameAndType        #38:#39        // 
+method_5679:(Lnet/minecraft/class_1282;)Z
+>   #41 = Methodref          #31.#40        // 
+net/minecraft/class_3222.method_5679:(Lnet/minecraft/class_1282;)Z
+>   #42 = Utf8               method_5667
+    #43 = Utf8               ()Ljava/util/UUID;
+>   #44 = NameAndType        #42:#43        // method_5667:()Ljava/util/UUID;
+>   #45 = Methodref          #31.#44        // 
+net/minecraft/class_3222.method_5667:()Ljava/util/UUID;
+    #46 = Utf8               net/minecraft/class_8103
+    #47 = Class              #46            // net/minecraft/class_8103
+>   #54 = Utf8               method_48789
+    #55 = Utf8               (Lnet/minecraft/class_6862;)Z
+>   #56 = NameAndType        #54:#55        // 
+method_48789:(Lnet/minecraft/class_6862;)Z
+>   #57 = Methodref          #53.#56        // 
+net/minecraft/class_1282.method_48789:(Lnet/minecraft/class_6862;)Z
+    #58 = Utf8               fall
+    #59 = String             #58            // fall
+>         27: invokevirtual #41                 // Method 
+net/minecraft/class_3222.method_5679:(Lnet/minecraft/class_1282;)Z
+          30: ifne          76
+          33: getstatic     #37                 // Field 
+dev/nanites/fabric/NanitesFabric.service:Ldev/nanites/game/GameService;
+>         38: invokevirtual #45                 // Method 
+net/minecraft/class_3222.method_5667:()Ljava/util/UUID;
+          41: aload_2
+          42: getstatic     #51                 // Field 
+net/minecraft/class_8103.field_42250:Lnet/minecraft/class_6862;
+>         45: invokevirtual #57                 // Method 
+net/minecraft/class_1282.method_48789:(Lnet/minecraft/class_6862;)Z
+          48: ifeq          56
+          51: ldc           #59                 // String fall
+>         69: invokevirtual #57                 // Method 
+net/minecraft/class_1282.method_48789:(Lnet/minecraft/class_6862;)Z
+          72: invokevirtual #78                 // Method 
+dev/nanites/game/GameService.damage:(Ljava/util/UUID;Ljava/lang/String;FDZ)F
+          75: freturn
+>         org.spongepowered.asm.mixin.injection.ModifyVariable(
+>           method=["actuallyHurt"]
+            at=@org.spongepowered.asm.mixin.injection.At(
+              value="HEAD"
+>       value=[class Lnet/minecraft/class_1657;]
+      )
+
+

@@ -1,0 +1,7 @@
+Microsoft Windows [versão 10.0.26200.9711]
+(c) Microsoft Corporation. Todos os direitos reservados.D:\Downloads\nanobots mod\nanites>powershell -NoProfile -File tools\verify-forge-base.ps1
+Forge base resource/bytecode verification: 30 checks; no game or LLM execution.
+Development JAR: D:\Downloads\nanobots mod\nanites\forge\build\libs\nanites-forge-1.20.1-0.3.0.jar bytes=226598 SHA256=51E2142210187A92910E2C3CB26626D6397CF7F8B384D054D871F050DF91B756
+Preserved dist: nanites-fabric-1.21.1-0.2.0.jar bytes=198748 SHA256=6A3A34CEF07CF67D082BD6BACAD0FAA82DAD10CDE2B2D0866B1BD47B52381731
+Preserved dist: nanites-forge-1.20.1-0.2.0.jar bytes=195121 SHA256=E86FE74A2BACEEE435EB7915DC79BDE24A0C82A99492CAA5578D533B8001A1FD
+

@@ -1,0 +1,44 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :core:compileJava UP-TO-DATE
+> Task :core:processResources NO-SOURCE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar UP-TO-DATE
+> Task :shared-game:compileJava
+> Task :shared-game:processResources NO-SOURCE
+> Task :shared-game:classes
+> Task :shared-game:compileTestJava
+> Task :shared-game:processTestResources NO-SOURCE
+> Task :shared-game:testClasses
+> Task :shared-game:autonomyTests
+Exception in thread "main" java.util.concurrent.ExecutionException: java.lang.IllegalArgumentException: String required: finish_reason
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at dev.nanites.game.AutonomyTests.realAgentFactoryProtocol(AutonomyTests.java:149)
+	at dev.nanites.game.AutonomyTests.main(AutonomyTests.java:155)
+Caused by: java.lang.IllegalArgumentException: String required: finish_reason
+	at dev.nanites.core.SafeData.text(SafeData.java:46)
+	at dev.nanites.core.MultiTurnAgent.lambda$turn$3(MultiTurnAgent.java:65)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+> Task :shared-game:autonomyTests FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':shared-game:autonomyTests'.
+> Process 'command 'C:\Program Files\Eclipse Adoptium\jdk-17.0.17.10-hotspot\bin\java.exe'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 1m 20s
+5 actionable tasks: 3 executed, 2 up-to-date

@@ -1,0 +1,44 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :core:compileJava UP-TO-DATE
+> Task :core:processResources NO-SOURCE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar UP-TO-DATE
+> Task :shared-game:compileJava
+> Task :shared-game:processResources NO-SOURCE
+> Task :shared-game:classes
+> Task :shared-game:compileTestJava
+> Task :shared-game:processTestResources NO-SOURCE
+> Task :shared-game:testClasses
+
+> Task :shared-game:autonomyTests
+Exception in thread "nanites-agent" java.lang.AssertionError: service automatic model gets memory and registry context
+	at dev.nanites.game.AutonomyTests.check(AutonomyTests.java:16)
+	at dev.nanites.game.AutonomyTests.lambda$serviceAutomaticProtocol$12(AutonomyTests.java:159)
+	at dev.nanites.core.LocalChatClient.complete(LocalChatClient.java:92)
+	at dev.nanites.core.MultiTurnAgent.turn(MultiTurnAgent.java:51)
+	at dev.nanites.core.MultiTurnAgent.lambda$run$2(MultiTurnAgent.java:34)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Exception in thread "main" java.lang.AssertionError: real automatic GameService agent attaches factory
+	at dev.nanites.game.AutonomyTests.check(AutonomyTests.java:16)
+	at dev.nanites.game.AutonomyTests.serviceAutomaticProtocol(AutonomyTests.java:172)
+	at dev.nanites.game.AutonomyTests.main(AutonomyTests.java:180)
+
+> Task :shared-game:autonomyTests FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':shared-game:autonomyTests'.
+> Process 'command 'C:\Program Files\Eclipse Adoptium\jdk-17.0.17.10-hotspot\bin\java.exe'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 1m 33s
+5 actionable tasks: 3 executed, 2 up-to-date

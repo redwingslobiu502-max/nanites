@@ -1,0 +1,8 @@
+program runtime_demo version v1;
+state hits = 0;
+on impact group owner {
+    if (event.damage > 0) {
+        add hits = 1;
+        emit intervene.p0 self = 10;
+    }
+}

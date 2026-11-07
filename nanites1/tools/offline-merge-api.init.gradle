@@ -1,0 +1,16 @@
+// Validation-only repository bridge for an already cached Forge merge API.
+// No dependency substitution, downloads, generated stand-ins or product build changes.
+allprojects {
+    repositories {
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = 'NanitesExistingOfflineMergeApi'
+                    url = uri(rootProject.file('build/offline-maven'))
+                    metadataSources { gradleMetadata(); mavenPom(); artifact() }
+                }
+            }
+            filter { includeVersion('net.minecraftforge', 'mergetool', '1.1.5') }
+        }
+    }
+}

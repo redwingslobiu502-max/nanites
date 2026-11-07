@@ -1,0 +1,39 @@
+PASS forge no test classes
+PASS forge box pattern
+PASS forge box result
+PASS forge box ingredients
+PASS forge box texture reference
+PASS forge box PNG signature
+PASS forge reservoir pattern
+PASS forge reservoir result
+PASS forge reservoir ingredients
+PASS forge reservoir texture reference
+PASS forge reservoir PNG signature
+PASS forge pt_br item names
+PASS forge en_us item names
+PASS forge async snapshots Java17
+JAR dist/nanites-forge-1.20.1-0.2.0.jar entries=124
+PASS fabric no test classes
+PASS fabric box pattern
+PASS fabric box result
+PASS fabric box ingredients
+PASS fabric box texture reference
+PASS fabric box PNG signature
+PASS fabric reservoir pattern
+PASS fabric reservoir result
+PASS fabric reservoir ingredients
+PASS fabric reservoir texture reference
+PASS fabric reservoir PNG signature
+PASS fabric pt_br item names
+PASS fabric en_us item names
+PASS fabric async snapshots Java17
+JAR dist/nanites-fabric-1.21.1-0.2.0.jar entries=127
+RESOURCE_CHECKS=28 PASS; static offline only, no game execution
+D:\Downloads\nanobots mod\nanites\dist\nanites-fabric-1.21.1-0.2.0.jar|bytes=198748|UTC=2026-11-06T21:11:00.6885272Z|SHA256=6A3A34CEF07CF67D082BD6BACAD0FAA82DAD10CDE2B2D0866B1BD47B52381731
+D:\Downloads\nanobots mod\nanites\dist\nanites-forge-1.20.1-0.2.0.jar|bytes=195121|UTC=2026-11-06T21:08:59.7102270Z|SHA256=E86FE74A2BACEEE435EB7915DC79BDE24A0C82A99492CAA5578D533B8001A1FD
+D:\Downloads\nanobots mod\nanites\dist\VALIDATION.txt|bytes=735|UTC=2026-11-06T21:11:04.5715927Z|SHA256=72769BC0D0C477933E0C5769A568840379C60EF9FC1F6FD19DB5AB4265C1A4DF
+D:\Downloads\nanobots mod\nanites\forge\build\libs\nanites-forge-1.20.1-0.2.0.jar|bytes=195121|UTC=2026-11-06T21:08:59.7102270Z|SHA256=E86FE74A2BACEEE435EB7915DC79BDE24A0C82A99492CAA5578D533B8001A1FD
+D:\Downloads\nanobots mod\nanites\fabric\build\libs\fabric-0.2.0.jar|bytes=190760|UTC=2026-11-06T20:27:05.1933571Z|SHA256=7BA04C6C00F868CF4C5914B3A3BB1E7A7F39E050337F39AC7AE84F94F7B30391
+D:\Downloads\nanobots mod\nanites\fabric\build\libs\nanites-fabric-1.21.1-0.2.0.jar|bytes=198748|UTC=2026-11-06T21:11:00.6885272Z|SHA256=6A3A34CEF07CF67D082BD6BACAD0FAA82DAD10CDE2B2D0866B1BD47B52381731
+D:\Downloads\nanobots mod\nanites\build\run-61e1df3f2c95476b91a2027cf715f8dd\nanites-core.jar|bytes=142278|UTC=2026-11-06T21:07:01.5662691Z
+D:\Downloads\nanobots mod\nanites\build\run-302d70f312774c25ae0df7043e8a5084\nanites-core.jar|bytes=142482|UTC=2026-11-06T21:07:19.4708475Z

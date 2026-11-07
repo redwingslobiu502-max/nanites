@@ -1,0 +1,2 @@
+allprojects { group = 'dev.nanites'; version = '0.2.0'; repositories { mavenCentral() } }
+subprojects { tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }; tasks.withType(AbstractArchiveTask).configureEach { preserveFileTimestamps = false; reproducibleFileOrder = true } }

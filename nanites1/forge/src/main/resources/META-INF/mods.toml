@@ -1,0 +1,20 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+[[mods]]
+modId="nanites"
+version="0.3.1"
+displayName="Nanites"
+description='''Nanite scripts, modular armor and live AI voxel construction with real registered blocks on Forge 1.20.1.'''
+[[dependencies.nanites]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.28,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.nanites]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"

@@ -1,0 +1,23 @@
+# Nanite Script 1. Units: adapter supplies distance in blocks and speed in milli-blocks/tick.
+# reservoir, structure, group and capability IDs are custom, not suit presets.
+program adaptive.structure version v1;
+state falls = 0;
+state protection = 0;
+
+fn falling(distance, speed) = distance > 3 && speed < 0;
+fn protection_level(distance) = distance * 2 + 1;
+
+on fall group builders {
+    if (falling(event.distance, event.speed)) {
+        transfer reservoir structure = 1000;
+        add falls = 1;
+        add protection = 1;
+        emit protect structure = protection_level(event.distance);
+        # Only accepted when the adapter has approved this insulating material/capability.
+        emit reconfigure.insulating structure = 1;
+    } else {
+        repeat (2) {
+            add protection = 1;
+        }
+    }
+}

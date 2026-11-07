@@ -1,0 +1,11 @@
+# Requires /nanites absorb while holding explicitly mapped white wool.
+# No energy extraction or inferred material physics.
+program insulating version v1;
+state hits = 0;
+on impact group owner {
+  if (event.fire == 1) {
+    add hits = 1;
+    emit protect.insulating self = 3;
+    emit shape.column self = 2;
+  }
+}

@@ -1,0 +1,24 @@
+Nanites Forge Minecraft 1.20.1 — 0.3.1
+Projeto: D:\Downloads\nanobots\nanites
+Java: 17 (Eclipse Adoptium jdk-17.0.17.10-hotspot)
+Forge: 1.20.1-47.4.28
+
+Build final executado:
+gradlew.bat -Ploader=forge :core:check :shared-game:check :forge:build --offline --console=plain
+Log: validation-logs/construction-release-0.3.1.log
+Resultado: BUILD SUCCESSFUL in 32s; reobfJar executado.
+
+Checks observados: coreTests 33, expansionTests 57, gameTests 51, runtimeTests 91, constructionTests 252 asserções (incluem guardas de thread), forgeAttributeTests 15.
+Mundo/IA fake nos testes de construção; Minecraft NÃO iniciado; nenhuma certificação in-game/modpack/LLM real.
+
+JAR publicado: dist/nanites-forge-1.20.1-0.3.1.jar
+Origem: forge/build/libs/nanites-forge-1.20.1-0.3.1.jar
+Tamanho: 262625 bytes
+SHA256: 82EB0A023F79B6B8BC9FB05181233C43AEFF0CD1C5FF6DAA6E8205920E97CC7F
+Hash origem/cópia idêntico. Conferidas 162 entradas, classes Blueprint/ConstructionQueue/ForgeConstruction/NanitesForge/ControlledTools/GameService, metadata 0.3.1/1.20.1 e ausência de Gson duplicado. Não sobrescritos JARs anteriores.
+
+Guia português com comandos literais, blueprint manual, IA, reload e limitações: docs/CONSTRUCAO_FORGE_0.3.1.md
+Relatório completo, lista de arquivos e tentativas de build: docs/VERIFICACAO_CONSTRUCAO_0.3.1.md
+
+Construção usa blocos reais de registry em fila incremental servidor. Sem whitelist de materiais, grants de construção ou consumo de inventário nesta fatia. Cancel/reload não desfazem blocos já colocados. Sem NBT de block entities, fila persistida ou hot-install de JARs. Mods precisam estar instalados; hooks/física/resultado visual devem ser testados pelo usuário. Config inicial de IA/limites exige reinício; scripts/blueprints/replanejamento não.
+jevmod não modificado/integrado; alterações preexistentes preservadas.

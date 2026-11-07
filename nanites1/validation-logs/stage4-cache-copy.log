@@ -1,0 +1,29 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy para Windows                              
+-------------------------------------------------------------------------------
+
+  Iniciado: s bado, 7 de novembro de 2026 19:13:36
+   Origem : C:\Users\Andrey\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mergetool\1.1.5\
+     Destino : D:\Downloads\nanismo\nanobots\nanites1\build\review-gradle-home\caches\modules-2\files-2.1\net.minecraftforge\mergetool\1.1.5\
+
+    Arquivos: *.*
+	    
+  Op‡äes: *.* /NDL /NFL /S /E /DCOPY:DA /COPY:DAT /NP /R:0 /W:0 
+
+------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------
+
+               Total   Copiada  IgnoradaIncompatibilidade     FALHA    Extras
+Diret¢rios:         4         4         0         0         0         0
+ Arquivos:         3         3         0         0         0         0
+    Bytes:     9.1 k     9.1 k         0         0         0         0
+N.§ de Vezes:   0:00:00   0:00:00                       0:00:00   0:00:00
+
+
+Velocidade:           1.336.571 Bytes/s.
+Velocidade:              76,479 MegaBytes/min.
+   Finalizado em: s bado, 7 de novembro de 2026 19:13:36
+
