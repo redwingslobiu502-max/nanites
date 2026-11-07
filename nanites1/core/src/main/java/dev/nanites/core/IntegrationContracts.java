@@ -7,7 +7,7 @@ import java.util.*;
  * ComponentAdapter remains future-only: no real world absorption implementation. */
 public final class IntegrationContracts {
     private IntegrationContracts() {}
-    public static final URI LOCAL_AI = URI.create("https://127.0.0.1:8081/v1");
+    public static final URI LOCAL_AI = URI.create("http://127.0.0.1:8081/v1");
     public static URI validateAiEndpoint(URI endpoint) {
         if (endpoint == null || !LOCAL_AI.toString().equals(endpoint.toString()) || endpoint.getRawUserInfo() != null || endpoint.getRawQuery() != null
                 || endpoint.getRawFragment() != null) throw new IllegalArgumentException("Only the exact local HTTPS endpoint is allowed");

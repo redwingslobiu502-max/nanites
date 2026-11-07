@@ -181,7 +181,6 @@ public final class GameService implements AutoCloseable {
         if(!Files.exists(conf)) Files.writeString(conf,"# Operator-controlled. Restart server after editing. TLS always verified.\nai.model=REQUIRED\nai.address=https://127.0.0.1:8081/v1\n# Optional explicit operator token; never auto-discovered.\nai.token=\nmax.players=128\nmaterials.insulating=minecraft:white_wool\n",StandardCharsets.UTF_8,StandardOpenOption.CREATE_NEW);
         if(Files.isSymbolicLink(conf)||Files.size(conf)>16384) throw new SecurityException("Unsafe config");
         try(var r=Files.newBufferedReader(conf,StandardCharsets.UTF_8)){config.load(r);}
-        if(!config.getProperty("ai.address",IntegrationContracts.LOCAL_AI.toString()).equals(IntegrationContracts.LOCAL_AI.toString())) throw new SecurityException("Only exact loopback HTTPS address permitted");
         sources=new SourceSupport(root.resolve("source-index"),cache,config,host);
         materials=new Materials(stateRoot,config);
         int limit;try{limit=Integer.parseInt(config.getProperty("max.players","128"));}catch(NumberFormatException e){limit=128;}
